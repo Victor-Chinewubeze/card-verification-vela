@@ -28,7 +28,7 @@ export default function CardState(props) {
     async function performCardVerification(cardNumber) {
 
         try {
-            const apiResponse = await axios.get(`http://localhost:8080/api/v1/card-scheme/verify/${cardNumber}`);
+            const apiResponse = await axios.get(`https://card-scheme-vela.herokuapp.com/api/v1/card-scheme/verify/${cardNumber}`);
 
             dispatch({
                 type: PERFORM_CARD_VERIFICATION,
@@ -48,7 +48,7 @@ export default function CardState(props) {
     async function generateStatistics(start, limit) {
 
         try {
-            const apiResponse = await axios.get(`http://localhost:8080/api/v1/card-scheme/stats?start=${start}&limit=${limit}`);
+            const apiResponse = await axios.get(`https://card-scheme-vela.herokuapp.com/api/v1/card-scheme/stats?start=${start}&limit=${limit}`);
 
             dispatch({
                 type: GENERATE_STATISTICS,
